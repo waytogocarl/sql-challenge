@@ -10,6 +10,13 @@ CREATE TABLE Titles (
     PRIMARY KEY (title_id)
 );
 
+CREATE TABLE salaries (
+    emp_no INT   NOT NULL,
+    salary INT   NOT NULL,
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+	PRIMARY KEY (emp_no)
+);
+
 CREATE TABLE Employees (
     emp_no INT   NOT NULL,
     emp_title_id VARCHAR   NOT NULL,
@@ -38,10 +45,4 @@ CREATE TABLE Dept_Manager (
     PRIMARY KEY (dept_no, emp_no)
 );
 
-CREATE TABLE Salaries (
-    salary INT   NOT NULL,
-    emp_no INT   NOT NULL,
-    FOREIGN KEY (emp_no) REFERENCES Employees (emp_no),
-    PRIMARY KEY (emp_no)
-);
 
